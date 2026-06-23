@@ -16,7 +16,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const SKILLS_ROOT = join(ROOT, "skills");
 const CATALOG_PATH = join(ROOT, "catalog", "skills.json");
-const CLI_INSTALL = "npx @tianqi815/skill-cli add";
+const REPO = "tianqi815/skill-library";
+const CLI_INSTALL = `npx skills add ${REPO} --skill`;
 
 function walkSkillFiles(dir, files = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -69,7 +70,7 @@ function main() {
       license: fm.license || "MIT",
       compatibility: fm.compatibility || "cursor",
       path: relative(ROOT, skillDir).replace(/\\/g, "/"),
-      installCommand: `${CLI_INSTALL} ${name}`,
+      installCommand: `${CLI_INSTALL} ${name} -a cursor -y`,
       updatedAt: metadata.updated
         ? new Date(metadata.updated).toISOString()
         : stat.mtime.toISOString(),

@@ -41,7 +41,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <InstallCommand command="npx @tianqi815/skill-cli add code-review" />
+          <InstallCommand command="npx skills add tianqi815/skill-library --skill code-review -a cursor -y" />
         </div>
       </section>
 

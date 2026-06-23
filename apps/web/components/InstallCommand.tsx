@@ -7,13 +7,46 @@ type InstallCommandProps = {
   className?: string;
 };
 
+async function copyToClipboard(text: string): Promise<boolean> {
+  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      // fall through to legacy copy
+    }
+  }
+
+  try {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    const ok = document.execCommand("copy");
+    document.body.removeChild(textarea);
+    return ok;
+  } catch {
+    return false;
+  }
+}
+
 export function InstallCommand({ command, className = "" }: InstallCommandProps) {
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
 
   async function copy() {
-    await navigator.clipboard.writeText(command);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setCopyError(false);
+    const ok = await copyToClipboard(command);
+    if (ok) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      return;
+    }
+    setCopyError(true);
+    setTimeout(() => setCopyError(false), 3000);
   }
 
   return (
@@ -32,9 +65,14 @@ export function InstallCommand({ command, className = "" }: InstallCommandProps)
           onClick={copy}
           className="rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-[#052e1a] transition hover:bg-accent-muted"
         >
-          {copied ? "Copied" : "Copy"}
+          {copied ? "Copied" : copyError ? "Select & copy" : "Copy"}
         </button>
       </div>
+      {copyError && (
+        <p className="mt-2 text-xs text-amber-300">
+          Auto-copy unavailable in this browser. Select the command above and copy manually (Ctrl+C).
+        </p>
+      )}
     </div>
   );
 }

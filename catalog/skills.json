@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-23T03:23:27.686Z",
+  "generatedAt": "2026-06-23T04:23:33.577Z",
   "repository": "tianqi815/skill-library",
-  "count": 5,
+  "count": 6,
   "skills": [
     {
       "name": "code-review",
@@ -18,7 +18,7 @@
       "license": "MIT",
       "compatibility": "cursor, claude-code, windsurf",
       "path": "skills/development/code-review",
-      "installCommand": "npx @tianqi815/skill-cli add code-review",
+      "installCommand": "npx skills add tianqi815/skill-library --skill code-review -a cursor -y",
       "updatedAt": "2026-06-23T00:00:00.000Z",
       "hasScripts": false
     },
@@ -36,7 +36,7 @@
       "license": "MIT",
       "compatibility": "cursor, claude-code, windsurf",
       "path": "skills/development/commit-message",
-      "installCommand": "npx @tianqi815/skill-cli add commit-message",
+      "installCommand": "npx skills add tianqi815/skill-library --skill commit-message -a cursor -y",
       "updatedAt": "2026-06-23T00:00:00.000Z",
       "hasScripts": false
     },
@@ -55,7 +55,7 @@
       "license": "MIT",
       "compatibility": "cursor, claude-code, windsurf",
       "path": "skills/productivity/excel-to-markdown",
-      "installCommand": "npx @tianqi815/skill-cli add excel-to-markdown",
+      "installCommand": "npx skills add tianqi815/skill-library --skill excel-to-markdown -a cursor -y",
       "updatedAt": "2026-06-23T00:00:00.000Z",
       "hasScripts": true
     },
@@ -75,7 +75,7 @@
       "license": "MIT",
       "compatibility": "cursor, claude-code, windsurf",
       "path": "skills/frontend/frontend-design",
-      "installCommand": "npx @tianqi815/skill-cli add frontend-design",
+      "installCommand": "npx skills add tianqi815/skill-library --skill frontend-design -a cursor -y",
       "updatedAt": "2026-06-23T00:00:00.000Z",
       "hasScripts": false
     },
@@ -95,9 +95,23 @@
       "license": "MIT",
       "compatibility": "cursor, claude-code, windsurf",
       "path": "skills/backend/oidc-integration",
-      "installCommand": "npx @tianqi815/skill-cli add oidc-integration",
+      "installCommand": "npx skills add tianqi815/skill-library --skill oidc-integration -a cursor -y",
       "updatedAt": "2026-06-23T00:00:00.000Z",
       "hasScripts": false
+    },
+    {
+      "name": "oidc-integration",
+      "description": "前後端項目接入自建 OIDC Server 的技能。為 React 前端和 Node.js（Express）後端提供完整的 OIDC 身份驗證整合方案，使用 openid-client v5.x 函式庫。僅適用於自建 OIDC Server。支援兩種整合模式：共存模式（保留舊登入 + 新增 OIDC）與替換模式（移除舊登入、僅用 OIDC）。用於實施統一登入、權杖管理、API 認證中介軟體。當需要為項目接入自建 OIDC 服務、實現單一登入（SSO）、替換或並行現有登入邏輯時使用此技能。",
+      "category": "general",
+      "tags": [],
+      "author": "skill-library",
+      "version": "1.0.0",
+      "license": "MIT",
+      "compatibility": "cursor",
+      "path": "skills/oidc-integration",
+      "installCommand": "npx skills add tianqi815/skill-library --skill oidc-integration -a cursor -y",
+      "updatedAt": "2026-06-22T01:07:01.816Z",
+      "hasScripts": true
     }
   ]
 }

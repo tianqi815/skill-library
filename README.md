@@ -7,8 +7,14 @@ Browse skills, copy an install command, and add them to your project in one step
 ## Quick Install
 
 ```bash
+npx skills add tianqi815/skill-library --skill code-review -a cursor -y
+npx skills add tianqi815/skill-library --skill oidc-integration -g -a cursor -y
+```
+
+Branded CLI (after publishing to npm):
+
+```bash
 npx @tianqi815/skill-cli add code-review
-npx @tianqi815/skill-cli add oidc-integration -g
 ```
 
 Or use the community CLI directly:
