@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0f17;
+  --foreground: #e8edf7;
+  --card: #121826;
+  --card-border: #1f2a3d;
+  --accent: #6ee7b7;
+  --accent-muted: #34d399;
+  --muted: #94a3b8;
+  --pill: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-muted: var(--muted);
+  --color-pill: var(--pill);
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body {
+  background: radial-gradient(circle at top, #152036 0%, var(--background) 45%);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.prose-skill h1,
+.prose-skill h2,
+.prose-skill h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.prose-skill p,
+.prose-skill li {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.prose-skill code {
+  background: #1e293b;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.prose-skill pre {
+  background: #0f172a;
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow-x: auto;
+}

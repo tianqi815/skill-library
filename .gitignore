@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+dist/
+.turbo/
+.vercel/
+*.log
+.DS_Store
+.env
+.env.local
+.env*.local
+packages/skill-cli/catalog.json

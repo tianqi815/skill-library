@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run catalog && npm run build --workspace @skill-library/web",
+  "outputDirectory": "apps/web/out",
+  "installCommand": "npm install",
+  "framework": null
+}

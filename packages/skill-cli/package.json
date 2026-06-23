@@ -1,0 +1,35 @@
+{
+  "name": "@tianqi815/skill-cli",
+  "version": "1.0.0",
+  "description": "Install Agent Skills from tianqi815/skill-library into Cursor and compatible agents",
+  "type": "module",
+  "bin": {
+    "skill-cli": "./bin/skill-cli.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "catalog.json"
+  ],
+  "scripts": {
+    "prepack": "node ../../scripts/generate-catalog.mjs && node -e \"require('node:fs').copyFileSync('../../catalog/skills.json','catalog.json')\""
+  },
+  "keywords": [
+    "cursor",
+    "agent-skills",
+    "skills",
+    "cli"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tianqi815/skill-library.git",
+    "directory": "packages/skill-cli"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

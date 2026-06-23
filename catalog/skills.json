@@ -1,0 +1,103 @@
+{
+  "generatedAt": "2026-06-23T03:23:27.686Z",
+  "repository": "tianqi815/skill-library",
+  "count": 5,
+  "skills": [
+    {
+      "name": "code-review",
+      "description": "Reviews code for quality, security, and maintainability following team standards. Use when reviewing pull requests, examining code changes, or when the user asks for a code review.",
+      "category": "development",
+      "tags": [
+        "code-review",
+        "quality",
+        "security",
+        "pr"
+      ],
+      "author": "skill-library",
+      "version": "1.0.0",
+      "license": "MIT",
+      "compatibility": "cursor, claude-code, windsurf",
+      "path": "skills/development/code-review",
+      "installCommand": "npx @tianqi815/skill-cli add code-review",
+      "updatedAt": "2026-06-23T00:00:00.000Z",
+      "hasScripts": false
+    },
+    {
+      "name": "commit-message",
+      "description": "Generates descriptive commit messages by analyzing git diffs following conventional commits. Use when the user asks for help writing commit messages or reviewing staged changes before commit.",
+      "category": "development",
+      "tags": [
+        "git",
+        "commit",
+        "conventional-commits"
+      ],
+      "author": "skill-library",
+      "version": "1.0.0",
+      "license": "MIT",
+      "compatibility": "cursor, claude-code, windsurf",
+      "path": "skills/development/commit-message",
+      "installCommand": "npx @tianqi815/skill-cli add commit-message",
+      "updatedAt": "2026-06-23T00:00:00.000Z",
+      "hasScripts": false
+    },
+    {
+      "name": "excel-to-markdown",
+      "description": "Parses Excel (.xlsx, .xls) and CSV spreadsheets into Markdown tables. Use when converting Excel to Markdown, parsing spreadsheet tables, or exporting tabular data to documentation.",
+      "category": "productivity",
+      "tags": [
+        "excel",
+        "csv",
+        "markdown",
+        "spreadsheet"
+      ],
+      "author": "skill-library",
+      "version": "1.0.0",
+      "license": "MIT",
+      "compatibility": "cursor, claude-code, windsurf",
+      "path": "skills/productivity/excel-to-markdown",
+      "installCommand": "npx @tianqi815/skill-cli add excel-to-markdown",
+      "updatedAt": "2026-06-23T00:00:00.000Z",
+      "hasScripts": true
+    },
+    {
+      "name": "frontend-design",
+      "description": "Creates distinctive, production-grade frontend interfaces with high design quality. Use when building web components, pages, dashboards, React components, HTML/CSS layouts, or when styling and beautifying any web UI.",
+      "category": "frontend",
+      "tags": [
+        "frontend",
+        "ui",
+        "design",
+        "react",
+        "css"
+      ],
+      "author": "skill-library",
+      "version": "1.0.0",
+      "license": "MIT",
+      "compatibility": "cursor, claude-code, windsurf",
+      "path": "skills/frontend/frontend-design",
+      "installCommand": "npx @tianqi815/skill-cli add frontend-design",
+      "updatedAt": "2026-06-23T00:00:00.000Z",
+      "hasScripts": false
+    },
+    {
+      "name": "oidc-integration",
+      "description": "Integrates self-hosted OIDC Server for React frontend and Node.js Express backend using openid-client v5. Use when implementing SSO, login flows, OIDC callbacks, or replacing legacy auth with OIDC. Supports coexist mode (legacy + OIDC) and replace mode (OIDC only).",
+      "category": "backend",
+      "tags": [
+        "oidc",
+        "auth",
+        "express",
+        "react",
+        "sso"
+      ],
+      "author": "skill-library",
+      "version": "1.0.0",
+      "license": "MIT",
+      "compatibility": "cursor, claude-code, windsurf",
+      "path": "skills/backend/oidc-integration",
+      "installCommand": "npx @tianqi815/skill-cli add oidc-integration",
+      "updatedAt": "2026-06-23T00:00:00.000Z",
+      "hasScripts": false
+    }
+  ]
+}

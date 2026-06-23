@@ -1,0 +1,2 @@
+# Keep catalog directory in git even before first generation in CI
+!.gitkeep
