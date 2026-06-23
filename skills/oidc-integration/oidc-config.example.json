@@ -1,0 +1,29 @@
+{
+  "oidc_params": {
+    "OIDC_URI_ISSUER": "",
+    "OIDC_URI_TOKEN": "",
+    "OIDC_URI_INTROSPECTION": "",
+    "OIDC_CLIENT_ID": "",
+    "OIDC_CLIENT_SECRET": "",
+    "OIDC_CLIENT_SCOPE": "openid profile offline_access",
+    "OIDC_CLIENT_REDIRECT_URI": ""
+  },
+  "backend_api_base_url": "",
+  "frontend_app_url": "",
+  "sso_login_button_text": "SANFIELD PORTAL LOGIN",
+  "integration_mode": "",
+  "post_auth_mode": "",
+  "local_user_config": {
+    "table_name": "",
+    "match_field": {
+      "oidc_claim": "sub",
+      "local_column": ""
+    },
+    "return_fields": []
+  },
+  "auto_create_user_config": {
+    "role_field_name": "",
+    "default_role_value": "",
+    "other_defaults": {}
+  }
+}
