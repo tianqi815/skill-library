@@ -4,9 +4,12 @@ on:
   push:
     branches: [main]
     paths:
+      - "skills/**"
       - "apps/web/**"
       - "catalog/**"
-      - "scripts/generate-catalog.mjs"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
   workflow_dispatch:
 
 jobs:
@@ -23,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate skills
+        run: npm run validate
+
       - name: Generate catalog
         run: npm run catalog
 
@@ -35,4 +41,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: apps/web/out
-          cname: false

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-24T04:10:47.262Z",
+  "generatedAt": "2026-06-24T06:39:34.250Z",
   "repository": "tianqi815/skill-library",
-  "count": 5,
+  "count": 6,
   "skills": [
     {
       "name": "code-review",
@@ -92,6 +92,20 @@
       "installCommand": "npx skills add tianqi815/skill-library --skill oidc-integration -a cursor -y",
       "updatedAt": "2026-06-22T01:07:01.816Z",
       "hasScripts": true
+    },
+    {
+      "name": "shell",
+      "description": "Runs the rest of a /shell request as a literal shell command. Use only when the user explicitly invokes /shell and wants the following text executed directly in the terminal.",
+      "category": "general",
+      "tags": [],
+      "author": "skill-library",
+      "version": "1.0.0",
+      "license": "MIT",
+      "compatibility": "cursor",
+      "path": "skills/shell",
+      "installCommand": "npx skills add tianqi815/skill-library --skill shell -a cursor -y",
+      "updatedAt": "2026-03-16T08:48:21.918Z",
+      "hasScripts": false
     }
   ]
 }

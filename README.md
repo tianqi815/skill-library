@@ -50,6 +50,26 @@ npm run dev:web
 npm run build
 ```
 
+## Maintain Skills (add / update)
+
+When you add a skill under `skills/<category>/<name>/SKILL.md`:
+
+```bash
+npm run validate          # check SKILL.md format
+npm run catalog           # refresh catalog/skills.json
+git add skills/ catalog/skills.json
+git commit -m "feat: add <skill-name> skill"
+git push origin main
+```
+
+GitHub Actions will validate, rebuild, and deploy the static site.
+If Actions is disabled (billing), run locally before push:
+
+```bash
+npm run validate && npm run catalog && npm run build
+# then push catalog/skills.json; redeploy apps/web/out to GitHub Pages manually
+```
+
 ## Skill Standard
 
 Each skill is a directory with `SKILL.md` (YAML frontmatter + markdown body). Optional: `scripts/`, `references/`, `assets/`.
