@@ -121,8 +121,23 @@ function main() {
     errors.push("No SKILL.md files found under skills/");
   }
 
+  const seenNames = new Map();
+
   for (const file of skillFiles) {
     validateSkillFile(file);
+
+    const content = readFileSync(file, "utf8");
+    const fm = parseFrontmatter(content, relative(ROOT, file));
+    if (fm?.name) {
+      const rel = relative(ROOT, file);
+      if (seenNames.has(fm.name)) {
+        errors.push(
+          `Duplicate skill name "${fm.name}" in ${rel} and ${seenNames.get(fm.name)}`
+        );
+      } else {
+        seenNames.set(fm.name, rel);
+      }
+    }
   }
 
   for (const w of warnings) {
