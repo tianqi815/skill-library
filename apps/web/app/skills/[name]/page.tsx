@@ -1,13 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { InstallCommand } from "@/components/InstallCommand";
-import {
-  getAllSkills,
-  getSkillByName,
-  getSkillMarkdownBodyFromPath,
-} from "@/lib/skills";
+import { SkillFileBrowser } from "@/components/SkillFileBrowser";
+import { getSkillFilesBundle } from "@/lib/skill-files";
+import { getAllSkills, getSkillByName } from "@/lib/skills";
 
 type PageProps = {
   params: Promise<{ name: string }>;
@@ -32,7 +28,7 @@ export default async function SkillDetailPage({ params }: PageProps) {
   const skill = getSkillByName(name);
   if (!skill) notFound();
 
-  const markdown = getSkillMarkdownBodyFromPath(skill.path);
+  const fileBundle = getSkillFilesBundle(skill.path);
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12">
@@ -41,8 +37,8 @@ export default async function SkillDetailPage({ params }: PageProps) {
       </Link>
 
       <div className="mt-6 grid gap-8 lg:grid-cols-[1fr_320px]">
-        <article>
-          <div className="mb-6">
+        <div className="min-w-0 space-y-6">
+          <div>
             <div className="mb-3 flex flex-wrap items-center gap-3">
               <span className="rounded-full bg-pill px-3 py-1 text-xs capitalize text-muted">
                 {skill.category}
@@ -58,10 +54,8 @@ export default async function SkillDetailPage({ params }: PageProps) {
             <p className="mt-4 text-lg leading-8 text-muted">{skill.description}</p>
           </div>
 
-          <div className="prose-skill rounded-2xl border border-card-border bg-card/50 p-6">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
-          </div>
-        </article>
+          <SkillFileBrowser bundle={fileBundle} />
+        </div>
 
         <aside className="space-y-5 lg:sticky lg:top-6 lg:self-start">
           <InstallCommand command={skill.installCommand} />
@@ -86,6 +80,10 @@ export default async function SkillDetailPage({ params }: PageProps) {
                 <dd className="break-all font-mono text-xs text-foreground">
                   {skill.path}
                 </dd>
+              </div>
+              <div>
+                <dt className="text-xs uppercase tracking-wide">Files</dt>
+                <dd className="text-foreground">{fileBundle.fileCount}</dd>
               </div>
               <div>
                 <dt className="text-xs uppercase tracking-wide">Updated</dt>

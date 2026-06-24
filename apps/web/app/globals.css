@@ -35,31 +35,35 @@ a {
   text-decoration: none;
 }
 
-.prose-skill h1,
-.prose-skill h2,
-.prose-skill h3 {
-  margin-top: 1.25rem;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
-}
-
-.prose-skill p,
-.prose-skill li {
+/* File preview markdown – base typography for CJK + Latin */
+.file-preview-prose {
+  max-width: none;
+  font-size: 0.9375rem;
+  line-height: 1.75;
   color: #cbd5e1;
-  line-height: 1.7;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", sans-serif;
 }
 
-.prose-skill code {
-  background: #1e293b;
-  padding: 0.1rem 0.35rem;
-  border-radius: 0.25rem;
-  font-size: 0.9em;
+.file-preview-prose > :first-child {
+  margin-top: 0;
 }
 
-.prose-skill pre {
-  background: #0f172a;
-  border: 1px solid var(--card-border);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  overflow-x: auto;
+.file-preview-prose > :last-child {
+  margin-bottom: 0;
+}
+
+/* Nested list spacing */
+.file-preview-prose li > ul,
+.file-preview-prose li > ol {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Checkbox lists from GFM */
+.file-preview-prose input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: var(--accent);
 }

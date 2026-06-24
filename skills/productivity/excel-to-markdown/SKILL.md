@@ -36,6 +36,14 @@ Task Progress:
 
 ## Install Dependencies
 
+Install in your own project or a local venv when you use this skill (not required for skill-library itself):
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install manually:
+
 ```bash
 pip install pandas openpyxl
 ```
